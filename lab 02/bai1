@@ -1,0 +1,31 @@
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+struct PhoneNumber
+{
+	int area;
+	int exchange;
+	int number;
+};
+int main()
+{
+	struct PhoneNumber PN1,PN2;
+	cout<<"the phone number 1:"<<endl;
+	cout<<"the area code: ";
+	cin>>PN1.area;
+	cout<<"the exchange: ";
+	cin>>PN1.exchange;
+	cout<<"the number: ";
+	cin>>PN1.number;
+	cout<<endl<<"the phone number 2:"<<endl;
+	cout<<"the area code: ";
+	cin>>PN2.area;
+	cout<<"the exchange: ";
+	cin>>PN2.exchange;
+	cout<<"the number: ";
+	cin>>PN2.number;
+	system("cls");
+	cout<<"Your Phone Number: ("<<PN1.area<<") "<<PN1.exchange<<"-"<<PN1.number<<endl;
+	cout<<"Another Phone Number: ("<<PN2.area<<") "<<PN2.exchange<<"-"<<PN2.number;		 
+	return 0;
+}
