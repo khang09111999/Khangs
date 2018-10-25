@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+void Import(float &Amount, int &Year, float &Rate);
+double Money(float Amount,int Year, float Rate);
+int main()
+{
+	float Amount, Rate;
+	int Year;
+	Import(Amount, Year, Rate);
+	cout<<"your amount after "<<Year<<" years: "<<Money(Amount, Year, Rate);
+	return 0;
+}
+void Import(float &Amount, int &Year, float &Rate)
+{
+	do 
+	{
+		cout<<"Import your amount: ";
+		cin>>Amount;
+		cout<<"Number of year: ";
+		cin>>Year;
+		cout<<"Import your rate: ";
+		cin>>Rate;
+	}while (Amount<=0||Year<=0||Rate<=0);
+	
+}
+double Money(float Amount,int Year, float Rate)
+{
+	double Money=Amount;
+	for (int i=1;i<=Year;i++)
+	{
+		Money=Money*(1+Rate/100);
+		
+	}
+	return Money;
+}
