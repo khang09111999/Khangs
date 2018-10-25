@@ -1,0 +1,50 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+void Import(long &a, long &b, long &c, long &d, int &Operator);
+double Answer(long a, long b, long c, long d, int Operator);
+
+int main()
+{
+	long a,b,c,d;
+	int Operator;
+	Import(a,b,c,d,Operator);
+	system("cls");
+	cout<<"Fraction 1: "<<a<<"/"<<b<<endl;
+	cout<<"Fraction 2: "<<c<<"/"<<d<<endl;
+	cout<<endl<<"Answer = "<<Answer(a,b,c,d,Operator)<<endl;
+	return 0;
+}
+
+void Import(long &a, long &b, long &c, long &d, int &Operator)
+{
+	do
+	{
+		cout<<"Operator:	1 = Add; 2 = Subtract; 3 = Multiple; 4 = Divise"<<endl<<endl;
+		cout<<"Import fractione one = ";cin>>a>>b;
+		cout<<"Import number two = ";cin>>c>>d;
+		cout<<"Import operator = ";cin>>Operator;
+	}while(Operator <1||Operator >4);
+}
+
+double Answer(long a, long b, long c, long d, int Operator)
+{
+	double S;
+	switch(Operator)
+	{
+		case 1:
+			S=(a*d+b*c)*1.0/(b*d)*1.0;
+			break;
+		case 2:
+			S=(a*d-b*c)*1.0/(b*d)*1.0;
+			break;
+		case 3:
+			S=(a*c)*1.0/(b*d)*1.0;
+			break;
+		case 4:
+			S=(a*d)*1.0/(b*c)*1.0;
+			break;
+	}
+	return S;
+}
