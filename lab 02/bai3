@@ -1,0 +1,52 @@
+#include<iostream>
+#include <stdlib.h>
+using namespace std;
+void Import(float &number1, int &operater, float &number2);
+double Answer (float number1, int operater, float number2);
+int main()
+{
+	char confirm;
+	do
+	{
+		float number1, number2;
+		int operater;
+		Import(number1, operater, number2);
+		cout<<endl<<"Answer = "<< Answer(number1,operater,number2)<<endl;
+		cout<<"Do you want to continue? ";
+		cin>> confirm;
+		system("cls");
+	}while (confirm=='y');
+	return 0;	
+}
+void Import(float &number1, int &operater, float &number2)
+{
+	do 
+	{
+		cout<<"operater: 1 = Add, 2 = Subtract, 3 = Multiple, 4 = Divide " <<endl<<endl;
+		cout<<"Import No.1 = "; cin>>number1;
+		cout<<"Import No.2 = "; cin>>number2;
+		cout<<"operater: "; cin>>operater;
+		
+	}while (operater<1||operater>4);
+	
+}
+double Answer (float number1, int operater, float number2)
+{
+	double A;
+	switch (operater)
+	{
+		case 1:
+			A=number1+number2;
+			break;
+		case 2:
+			A=number1-number2;
+			break;
+		case 3:
+			A=number1*number2;
+			break;
+		case 4:
+			A=number1/number2;
+			break;
+	}
+	return A;
+}
