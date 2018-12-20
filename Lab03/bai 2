@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+	private:
+		string Name;
+		int Seniority;
+	public:
+		void Import();
+		double Reward();
+		void Export();
+};Employee E[100];
+
+void Input(int &n);
+void Output(int n);
+
+
+int main()
+{
+		int n;
+		Input(n);
+		Output(n);
+	
+	return 0;
+}
+
+void Employee::Import()
+{
+	cout<<"*Please import:"<<endl<<endl;
+	cout<<"-Full name of employee: ";
+	getline(cin,Name);
+	do
+	{
+		cout<<"-"<<Name<<"'s seniority = ";
+		cin>>Seniority;
+	}while(Seniority<0);
+}
+
+double Employee::Reward()
+{
+	double Amount=3000;
+	for(int i=1;i<=Seniority;i++)
+		Amount*=(1+(5.5/100));
+	return Amount;
+}
+
+void Employee::Export()
+{
+	cout<<"*Employee: "<<Name<<endl<<endl;
+	cout<<"-Seniority = "<<Seniority<<endl;
+	cout<<"-Compensation = "<<Reward()<<endl;
+}
+
+void Input(int &n)
+{
+	cout<<"Hello! Please import number of employees = ";
+	cin>>n;
+	cin.ignore(1);
+	for(int i=0;i<n;i++)
+	{
+		E[i].Import();
+		cout<<endl;
+		cin.ignore(1);
+	}
+}
+
+void Output(int n)
+{
+	system("cls");
+	for(int i=0;i<n;i++)
+	{
+		E[i].Export();
+		cout<<endl;
+	}
+}
