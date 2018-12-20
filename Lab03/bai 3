@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Serial
+{
+	private:
+		float a[100],ID[100];
+		int n;
+	public:
+		void Import();		
+		void Export();
+};Serial S;
+
+int Generate();
+void Continue(char &Confirm);
+
+int main()
+{
+	
+		S.Import();
+		S.Export();
+		
+	
+	return 0;
+}
+
+void Serial::Import()
+{
+	cout<<"Hello! Please import number of elements = ";
+	cin>>n;
+	cout<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cout<<"-a["<<i<<"] = ";
+		cin>>a[i];
+		ID[i]=Generate();
+	}
+}
+
+void Serial::Export()
+{
+	system("cls");
+	for(int i=0;i<n;i++)
+		cout<<"*SN["<<ID[i]<<"]: "<<a[i]<<endl;
+}
+
+int Generate()
+{
+	static int ID(0);
+	++ID;
+	return ID;
+}
+
