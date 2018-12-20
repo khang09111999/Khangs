@@ -1,1 +1,60 @@
+#include <iostream>
+using namespace std;
+
+class Time
+{
+	private:
+		int Hours1,Hours2,Hours3,Minutes1,Minutes2,Minutes3,Seconds1,Seconds2,Seconds3;
+	public:
+		void Original();
+		void Fixed();
+		void Added();
+		void Display();
+};Time T;
+
+int main()
+{
+
+		T.Display();
+	
+	
+	return 0;
+}
+
+void Time::Original()
+{
+	int const Hours1=0;
+	int const Minutes1=0;
+	int const Seconds1=0;
+}
+
+void Time::Fixed()
+{
+	cout<<"Hello! Please import:"<<endl<<endl;
+	do
+	{
+		cout<<"*Hours = "; cin>>Hours2;
+		cout<<"*Minutes = "; cin>>Minutes2;
+		cout<<"*Seconds = "; cin>>Seconds2;
+	}while(Hours2<0||Hours2>23||Minutes2<0||Minutes2>=60||Seconds2<0||Seconds2>=60);
+}
+
+void Time::Added()
+{
+	Hours3=Hours1+Hours2;
+	Minutes3=Minutes1+Minutes2;
+	Seconds3=Seconds1+Seconds2;
+}
+
+void Time::Display()
+{
+	Original();
+	Fixed();
+	Added();
+	system("cls");
+	cout<<"Time Display:"<<endl<<endl;
+	cout<<"*Original: 0"<<Hours1<<":0"<<Minutes1<<":0"<<Seconds1;
+	cout<<endl<<"*Fixed: "<<Hours2<<":"<<Minutes2<<":"<<Seconds2;
+	cout<<endl<<"*Added: "<<Hours3<<":"<<Minutes3<<":"<<Seconds3;
+}
 
